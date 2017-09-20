@@ -13,7 +13,7 @@
         }
     }
 </script>
-<style>
+<style lang="scss" scoped>
     .toast {
         position: absolute;
         z-index: 99;

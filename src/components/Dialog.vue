@@ -30,7 +30,7 @@
         }
     }
 </script>
-<style scoped>
+<style lang="scss" scoped>
     .dialog {
         position: fixed;
         z-index: 100;
@@ -39,33 +39,33 @@
         left: 0;
         right: 0;
         background:rgba(0,0,0,.3);
-    }
-    .dialog .box {
-        position: relative;
-        box-sizing: border-box;
-        padding:20px 30px;
-        width: 300px;
-        background: #fff;
-        top:50%;
-        left:50%;
-        transform: translateX(-50%) translateY(-50%);
-    }
-    .dialog .box .close {
-        position: absolute;
-        cursor: pointer;
-        top:-20px;
-        right:0;
-    }
-    .dialog .box .button {
-        display: flex;
-    }
-    .dialog .box .button div {
-        flex: 1;
-        line-height: 30px;
-        margin-top:10px;
-        border:1px solid #ccc;
-    }
-    .dialog .box .button div:nth-child(2){
-        border-left:none;
+        .box {
+            position: relative;
+            box-sizing: border-box;
+            padding:20px 30px;
+            width: 300px;
+            background: #fff;
+            top:50%;
+            left:50%;
+            transform: translateX(-50%) translateY(-50%);
+            .close {
+                position: absolute;
+                cursor: pointer;
+                top:-20px;
+                right:0;
+            }
+            .button {
+                display: flex;
+                div {
+                    flex: 1;
+                    line-height: 30px;
+                    margin-top:10px;
+                    border:1px solid #ccc;
+                    &:nth-child(2){
+                        border-left:none;
+                    }
+                }
+            }
+        }
     }
 </style>

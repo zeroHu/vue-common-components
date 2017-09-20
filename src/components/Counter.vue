@@ -15,26 +15,27 @@
                 if(type == 'add'){
                     this.counterInitnum ++
                 }else if(type == 'slice') {
-                    this.counterInitnum > 1?this.counterInitnum-- :''
+                    this.counterInitnum > 1 ? this.counterInitnum -- : ''
                 }
                 this.$emit('counter-num',this.counterInitnum)
             }
         }
     }
 </script>
-<style>
+<style lang="scss" scoped>
     .box {
         width: 200px;
         margin:auto;
         display: flex;
-    }
-    .box span,.box input {
-        flex: 1;
-        border:1px solid #ccc;
-    }
-    .box input {
-        border-left:0;
-        border-right:0;
-        flex:60%;
+        cursor:pointer;
+        span,input {
+            flex: 1;
+            border:1px solid #ccc;
+        }
+        input {
+            border-left:0;
+            border-right:0;
+            flex:60%;
+        }
     }
 </style>

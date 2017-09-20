@@ -38,19 +38,7 @@
         }
     }
 </script>
-<style>
-    .multiplychooser .content{
-        width: 300px;
-        margin:auto;
-        cursor: pointer;
-        overflow: hidden;
-    }
-    .multiplychooser .content ul li {
-        float: left;
-        margin:10px 5px;
-        padding:3px 5px;
-        border:1px solid #eee;
-    }
+<style lang="scss" scoped>
     .clearfix::after{
         content: '';
         display: block;
@@ -58,8 +46,20 @@
         overflow: hidden;
         clear: both;
     }
-    .selectd {
-        background: #567;
-        color:#fff;
+    .multiplychooser .content{
+        width: 300px;
+        margin:auto;
+        cursor: pointer;
+        overflow: hidden;
+        ul li {
+            float: left;
+            margin:10px 5px;
+            padding:3px 5px;
+            border:1px solid #eee;
+            &.selectd {
+                background: #567;
+                color:#fff;
+            }
+        }
     }
 </style>

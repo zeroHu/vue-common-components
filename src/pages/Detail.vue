@@ -54,14 +54,14 @@ export default {
     }
 }
 </script>
-<style>
+<style lang="scss">
     .operat {
         display: flex;
         width: 200px;
         margin:auto;
-    }
-    .operat button {
-        flex: 1;
-        border:1px solid #ccc;
+        button {
+            flex: 1;
+            border:1px solid #ccc;
+        }
     }
 </style>

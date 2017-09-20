@@ -23,19 +23,7 @@
         }
     }
 </script>
-<style scoped>
-    .chooser .content{
-        width: 210px;
-        margin:auto;
-        cursor: pointer;
-        overflow: hidden;
-    }
-    .chooser .content ul li {
-        float: left;
-        margin:10px 5px;
-        padding:3px 5px;
-        border:1px solid #eee;
-    }
+<style lang="scss" scoped>
     .clearfix::after{
         content: '';
         display: block;
@@ -43,8 +31,20 @@
         overflow: hidden;
         clear: both;
     }
-    .selectd {
-        background: #567;
-        color:#fff;
+    .chooser .content{
+        width: 210px;
+        margin:auto;
+        cursor: pointer;
+        overflow: hidden;
+        ul li {
+            float: left;
+            margin:10px 5px;
+            padding:3px 5px;
+            border:1px solid #eee;
+        }
+        li.selectd {
+            background: #567;
+            color:#fff;
+        }
     }
 </style>

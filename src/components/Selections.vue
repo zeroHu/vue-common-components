@@ -21,25 +21,23 @@
         }
     }
 </script>
-<style scoped>
+<style lang="scss" scoped>
     .selections {
         border:1px solid #ccc;
-    }
-    .selections ul {
-        cursor: pointer;
-        padding: 0;
-        margin:0;
-    }
-    .selections {
         margin:auto;
         width: 130px;
         text-align: center;
-    }
-    .selections li{
-        list-style: none;
-        border-bottom:1px solid #efefef;
-    }
-    .selections li:last-child{
-        border-bottom:none;
+        ul {
+            cursor: pointer;
+            padding: 0;
+            margin:0;
+            li{
+                list-style: none;
+                border-bottom:1px solid #efefef;
+                &:last-child{
+                    border-bottom:none;
+                }
+            }
+        }
     }
 </style>
