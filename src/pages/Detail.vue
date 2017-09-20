@@ -7,12 +7,17 @@
             <button @click="dialogJson.isShowDialog = true">show dialog</button>
             <button @click="toastJson.showToast = true">show toast</button>
         </div>
+
         <!-- dialog 可是使用v-show 或者 v-if -->
         <v-dialog v-show="dialogJson.isShowDialog" :dialog-json="dialogJson" @close-dialog="dialogJson.isShowDialog = false" @callback-or="callbackOrFn"></v-dialog>
+        <div>dialog 的操作结果是 <span>{{ dialogJson.callbackOr }}</span></div>
+
         <!-- toast 必须使用v-if toast mounted函数里面有个倒计时3s就执行的函数-->
         <v-toast  v-if="toastJson.showToast" :toast-json="toastJson" @close-toast="toastJson.showToast = false"></v-toast>
-        <!-- dialog 操作结果反馈 -->
-        <div>dialog 的操作结果是 <span>{{ dialogJson.callbackOr }}</span></div>
+
+        <!-- calendar -->
+        <div>choose calendar</div>
+        <v-calendar :default-date="calendar"></v-calendar>
         <div class="router">
           <router-link to="/">go to index</router-link>
         </div>
@@ -21,6 +26,7 @@
 <script>
 import VDialog from '@/components/Dialog'
 import VToast from '@/components/Toast'
+import VCalendar from '@/components/Calendar'
 export default {
     data(){
         return {
@@ -39,7 +45,9 @@ export default {
                 showToast:false,//是否显示toast弹窗
                 showtime:3000,//toast停留时间
                 contentWord:'这是toa这是toa这是toa这是toa这是toa这是toa这是toa'//toast提示语言
-            }
+            },
+            // 日历传参
+            calendar:"2017-09-20"
         }
     },
     methods:{
@@ -50,7 +58,8 @@ export default {
     },
     components:{
         VDialog,
-        VToast
+        VToast,
+        VCalendar
     }
 }
 </script>
