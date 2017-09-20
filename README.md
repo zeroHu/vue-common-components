@@ -10,10 +10,11 @@
 * 可配置toast (toast)
 * 单选
 * 多选
+* counter计算
 * input框 search 出一个数组 然后选择select
 
 ```
-可配置参数和说明，但是没有
+可配置参数和说明
 // dialog 传参
 dialogJson:{
     isShowDialog:false,//初始默认弹框的是否显示
@@ -38,7 +39,7 @@ toastJson:{
 ![图片](http://oqt0cgoq9.bkt.clouddn.com/vue-components-toast.jpg)
 ![图片](http://oqt0cgoq9.bkt.clouddn.com/vue-components-chooser.jpg)
 ![图片](http://oqt0cgoq9.bkt.clouddn.com/vue-components-selections.jpg)
-
+![图片](http://oqt0cgoq9.bkt.clouddn.com/vue-components-counter.jpg)
 
 > 项目执行步骤
 
