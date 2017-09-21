@@ -1,5 +1,5 @@
 <template>
-    <div class="detail-wrapper">
+    <div class="detail-wrapper" @click="calendarJson.showcalendar = false">
         <img src="../assets/logo.png" alt="">
         <div>{{ word }}</div>
         <!-- 功能操作区 -->
@@ -16,8 +16,10 @@
         <v-toast  v-if="toastJson.showToast" :toast-json="toastJson" @close-toast="toastJson.showToast = false"></v-toast>
 
         <!-- calendar -->
-        <div>choose calendar</div>
-        <v-calendar :default-date="calendar"></v-calendar>
+        <div>日期选择的时间为:{{ calendarJson.choosedCalendarDate }}</div>
+        <v-calendar :default-data="calendarJson" @haschoosed-date="calendarJson.choosedCalendarDate = $event" @offoron-calendar="calendarJson.showcalendar = $event"></v-calendar>
+
+        <!-- router -->
         <div class="router">
           <router-link to="/">go to index</router-link>
         </div>
@@ -47,7 +49,11 @@ export default {
                 contentWord:'这是toa这是toa这是toa这是toa这是toa这是toa这是toa'//toast提示语言
             },
             // 日历传参
-            calendar:"2017-09-20"
+            calendarJson :{
+                showcalendar:false,
+                date:"2017-08-20",
+                choosedCalendarDate:''
+            }
         }
     },
     methods:{
