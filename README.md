@@ -31,6 +31,12 @@ toastJson:{
     showtime:3000,//toast停留时间
     contentWord:'这是toa这是toa这是toa这是toa这是toa这是toa这是toa'//toast提示语言
 }
+// 日历传参
+calendarJson :{
+    showcalendar:false,
+    date:"2017-08-20",
+    choosedCalendarDate:''
+}
 ```
 
 > 组件效果图

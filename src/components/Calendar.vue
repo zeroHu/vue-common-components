@@ -65,7 +65,7 @@
                 for(var i = 0; i <monthdaynum; i++){
                     if(i<firstDay){
                         lastMonthFirstNum ++
-                        weekNumArr[i] = { num:lastMonthFirstNum,status:'before' }// status标明是上个月
+                        weekNumArr[i] = { num:lastMonthFirstNum,status:'before' }// status before 标明是上个月
                     }else if(i>=firstDay){
                         if(addnum < self.monthdayArr[self.month]){
                             addnum ++
@@ -73,7 +73,7 @@
                             addnum = 1
                             addnumflag = true
                         }
-                        weekNumArr[i] = { num:addnum,status:addnumflag ? 'after' :1 }// status after 标明是下个月 status 1的时候表示是本月日子
+                        weekNumArr[i] = { num:addnum,status:addnumflag ? 'after' : 1 }// status after 标明是下个月 status 1的时候表示是本月日子
                     }
                 }
                 this.monthNumber = weekNumArr
