@@ -12,7 +12,7 @@
                     <div v-for="witem in weeksName">{{ witem }}</div>
                 </div>
                 <div class="day">
-                    <div v-for="(ditem,dindex) in monthNumber" :class="{ grey: ditem.status !== 1 , nowday:nowmonth &&day == ditem.num , choosed : dayChoosedIndex == dindex}" @click.stop="choosedCalendarDate(dindex,ditem.status)">{{ ditem.num }}</div>
+                    <div v-for="(ditem,dindex) in monthNumber" :class="{ grey: ditem.status !== 1 , nowday:nowmonth && today == ditem.num , choosed : dayChoosedIndex == dindex}" @click.stop="choosedCalendarDate(dindex,ditem.status)">{{ ditem.num }}</div>
                 </div>
             </div>
         </div>
@@ -50,6 +50,7 @@
                 if(this.year == new Date().getFullYear() && this.month == new Date().getMonth()){
                     this.nowmonth = true
                 }
+                this.today = new Date().getDate()
             },
             // 计算每月的日历number
             getDayNumber(){
