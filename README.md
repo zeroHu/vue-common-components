@@ -11,6 +11,7 @@
 * 单选
 * 多选
 * counter计算
+* 日历
 * input框 search 出一个数组 然后选择select
 
 ```
@@ -40,6 +41,7 @@ toastJson:{
 ![图片](http://oqt0cgoq9.bkt.clouddn.com/vue-components-chooser.jpg)
 ![图片](http://oqt0cgoq9.bkt.clouddn.com/vue-components-selections.jpg)
 ![图片](http://oqt0cgoq9.bkt.clouddn.com/vue-components-counter.jpg)
+![图片](http://oqt0cgoq9.bkt.clouddn.com/vue-components-calendar.jpg)
 
 > 项目执行步骤
 
