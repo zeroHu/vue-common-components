@@ -14,8 +14,8 @@
         <!-- 功能操作区 -->
         <p>下面是dialog toast 体验</p>
         <div class="operat item-blocks" style="margin-top:20px;">
-            <button @click="dialogJson.isShowDialog = true">show dialog</button>
-            <button @click="toastJson.showToast = true">show toast</button>
+            <div class="button-test dialog-btn"@click="dialogJson.isShowDialog = true">dialog</div>
+            <div class="button-test toast-btn" @click="toastJson.showToast = true">toast</div>
         </div>
 
         <div class="item-blocks">
@@ -100,6 +100,22 @@ export default {
             flex: 1;
             border:1px solid #ccc;
         }
+        .button-test {
+            box-sizing:border-box;
+            display:block;
+            border:none;
+            width:200px;
+            height:30px;
+            line-height:30px;
+            color:#fff;
+            background:#ff9090;
+            border:1px solid #fff;
+            color:#fff;
+        }
+    }
+
+    .toast-btn {
+        margin-left:50px;
     }
     .list {
         position:absolute;
