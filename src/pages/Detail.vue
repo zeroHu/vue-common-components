@@ -1,27 +1,45 @@
 <template>
     <div class="detail-wrapper" @click="calendarJson.showcalendar = false">
-        <img src="../assets/logo.png" alt="">
-        <div>{{ word }}</div>
+        <!-- <img src="../assets/logo.png" alt=""> -->
+        <!-- <div>{{ word }}</div> -->
+
+        <div class="list">
+            <ul>
+                <li>dialog</li>
+                <li>toast</li>
+                <li>calendar</li>
+            </ul>
+        </div>
+
         <!-- 功能操作区 -->
-        <div class="operat">
+        <p>下面是dialog toast 体验</p>
+        <div class="operat item-blocks" style="margin-top:20px;">
             <button @click="dialogJson.isShowDialog = true">show dialog</button>
             <button @click="toastJson.showToast = true">show toast</button>
         </div>
 
-        <!-- dialog 可是使用v-show 或者 v-if -->
-        <v-dialog v-show="dialogJson.isShowDialog" :dialog-json="dialogJson" @close-dialog="dialogJson.isShowDialog = false" @callback-or="callbackOrFn"></v-dialog>
-        <div>dialog 的操作结果是 <span>{{ dialogJson.callbackOr }}</span></div>
+        <div class="item-blocks">
+            <!-- dialog 可是使用v-show 或者 v-if -->
+            <v-dialog v-show="dialogJson.isShowDialog" :dialog-json="dialogJson" @close-dialog="dialogJson.isShowDialog = false" @callback-or="callbackOrFn"></v-dialog>
+            <div>dialog 的操作结果是 <span>{{ dialogJson.callbackOr }}</span></div>
+        </div>
 
-        <!-- toast 必须使用v-if toast mounted函数里面有个倒计时3s就执行的函数-->
-        <v-toast  v-if="toastJson.showToast" :toast-json="toastJson" @close-toast="toastJson.showToast = false"></v-toast>
+
+        <div class="item-block">
+            <!-- toast 必须使用v-if toast mounted函数里面有个倒计时3s就执行的函数-->
+            <v-toast  v-if="toastJson.showToast" :toast-json="toastJson" @close-toast="toastJson.showToast = false"></v-toast>
+        </div>
+
 
         <!-- calendar -->
-        <div>日期选择的时间为:{{ calendarJson.choosedCalendarDate }}</div>
-        <v-calendar :default-data="calendarJson" @haschoosed-date="calendarJson.choosedCalendarDate = $event" @offoron-calendar="calendarJson.showcalendar = $event"></v-calendar>
+        <div class="item-blcok" style="margin-top:50px">
+            <div>日期选择的时间为:{{ calendarJson.choosedCalendarDate }}</div>
+            <v-calendar :default-data="calendarJson" @haschoosed-date="calendarJson.choosedCalendarDate = $event" @offoron-calendar="calendarJson.showcalendar = $event"></v-calendar>
+        </div>
 
         <!-- router -->
-        <div class="router">
-          <router-link to="/">go to index</router-link>
+        <div class="router" style="margin-top:30px">
+          <router-link to="/">返回主页</router-link>
         </div>
     </div>
 </template>
@@ -70,6 +88,10 @@ export default {
 }
 </script>
 <style lang="scss">
+    * {
+        margin:0;
+        pading:0
+    }
     .operat {
         display: flex;
         width: 200px;
@@ -78,5 +100,30 @@ export default {
             flex: 1;
             border:1px solid #ccc;
         }
+    }
+    .list {
+        position:absolute;
+        width: 150px;
+        left: 0;
+        border:1px solid #efefef;
+        top: 40px;
+        text-align: center;
+    }
+    .list ul {
+        width: 150px;
+        overflow: hidden;
+        clear: both;
+    }
+    .list ul li {
+        float: left;
+        box-sizing: border-box;
+        padding:20px 0;
+        width: 150px;
+        text-align: center;
+        border-bottom: 1px solid #eee;
+    }
+    .list ul li:hover {
+        background: #ff9090;
+        color:#fff;
     }
 </style>

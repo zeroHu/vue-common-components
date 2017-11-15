@@ -1,7 +1,12 @@
 <template>
   <div id="app">
-    <header>i am header</header>
+    <header><h3>vue组件体验</h3></header>
     <router-view></router-view>
+    <div>
+      <p>
+        <a href="http://www.zeroyh.cn">关于jquery 组件的更多</a>
+      </p>
+    </div>
   </div>
 </template>
 
@@ -32,9 +37,9 @@ li {
 }
 header {
   width: 100%;
-  height:100px;
-  line-height: 100px;
+  height:40px;
+  line-height: 40px;
   color:#fff;
-  background: #ccc;
+  background: #ff9090;
 }
 </style>
