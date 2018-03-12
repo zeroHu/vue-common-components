@@ -1,8 +1,7 @@
 <template>
     <div class="calendar">
         <div class="choose-calendar-button" @click.stop="showOrHideCalendar(true)">选择日期</div>
-        <!--  v-show="defaultData.showcalendar" -->
-        <div class="box">
+        <div class="box" v-show="defaultData.showcalendar">
             <div class="year-box">
                 <div class="left" @click.stop="monthChoose('slice')"><</div>
                 <div class="main">{{ month+1 }}月 {{ year }}年</div>
