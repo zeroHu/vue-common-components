@@ -12,7 +12,7 @@
                     <div v-for="witem in weeksName">{{ witem }}</div>
                 </div>
                 <div class="day">
-                    <div v-for="(ditem,dindex) in monthNumber" :class="{ grey: ditem.status !== 1 , nowday:nowmonth && today == ditem.num && ditem.status == 1, choosed : dayChoosedIndex == dindex}" @click.stop="choosedCalendarDate(dindex,ditem.status)">{{ ditem.num }}</div>
+                    <div v-for="(ditem,dindex) in monthNumber" class="each-deay" :class="{ grey: ditem.status !== 1 , nowday:nowmonth && today == ditem.num && ditem.status == 1, choosed : dayChoosedIndex == dindex}" @click.stop="choosedCalendarDate(dindex,ditem.status)">{{ ditem.num }}</div>
                 </div>
             </div>
         </div>
@@ -224,6 +224,12 @@
                     height: 100%;
                     display: flex;
                     flex-wrap: wrap;
+                    .each-deay {
+                        &:hover {
+                            color: #fff;
+                            background: #fc615d;
+                        }
+                    }
                     div {
                         width: 14%;
                         line-height: 36px;
