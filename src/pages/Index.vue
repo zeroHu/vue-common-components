@@ -1,21 +1,11 @@
 <template>
     <div class="app">
-        <div class="list">
-            <ul>
-                <li>Selection</li>
-                <li>Chooser</li>
-                <li>MultiplyChooser</li>
-                <li>Counter</li>
-
-            </ul>
-        </div>
         <!-- 通过input search -->
         <div class="input-search item-block">
             <input type="text" v-model="inputval" @input="inputChange">
             <v-selection :select-data="selectdata" :is-showsection="isShowSection" @change-inputVal="changeVal"></v-selection>
             <div>你input search的选择是{{ !isShowSection ? inputval : '' }}</div>
         </div>
-
 
         <!-- chooser -->
         <div class="chooser item-block">
@@ -51,24 +41,23 @@ export default {
     name: 'app',
     data () {
         return {
-            isShowSection:false,
-            inputval:'',
+            isShowSection: false,
+            inputval: '',
             msg: '这是一个体验功能页面',
-            chooserData:['小型车','中型车','大型车'],
-            multiplyData:['炸鸡','啤酒','巧克力','辣条'],
-            chooserChoosed:'小型车',
-            multiplyChoosedArr:[],
-            counterNum:1
+            chooserData: ['小型车','中型车','大型车'],
+            multiplyData: ['炸鸡','啤酒','巧克力','辣条'],
+            chooserChoosed: '小型车',
+            multiplyChoosedArr: [],
+            counterNum: 1
         }
     },
     computed:{
         selectdata(){
-            var allKeyArr = ['hello','hworld','maybe','find','tifei','1323'],
-                returnarr = [],
-                self = this
+            var allKeyArr = ['hello','hworld', 'maybe', 'find', 'tifei', '1323', '4567890', 'oduedncjdislddh1pbvnxzla'],
+                returnarr = []
 
-            allKeyArr.forEach(function(item){
-                if(item.indexOf(self.inputval) > -1){
+            allKeyArr.forEach(item => {
+                if(item.indexOf(this.inputval) > -1){
                   returnarr.push(item)
                 }
             })
@@ -94,7 +83,6 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <!-- lang="scss" scoped -->
 <style>
 * {

@@ -1,18 +1,8 @@
 <template>
     <div class="detail-wrapper" @click="calendarJson.showcalendar = false">
-        <!-- <img src="../assets/logo.png" alt=""> -->
-        <!-- <div>{{ word }}</div> -->
-
-        <div class="list">
-            <ul>
-                <li>dialog</li>
-                <li>toast</li>
-                <li>calendar</li>
-            </ul>
-        </div>
+        <p>下面是dialog toast 体验</p>
 
         <!-- 功能操作区 -->
-        <p>下面是dialog toast 体验</p>
         <div class="operat item-blocks" style="margin-top:20px;">
             <div class="button-test dialog-btn"@click="dialogJson.isShowDialog = true">dialog</div>
             <div class="button-test toast-btn" @click="toastJson.showToast = true">toast</div>
@@ -24,12 +14,10 @@
             <div>dialog 的操作结果是 <span>{{ dialogJson.callbackOr }}</span></div>
         </div>
 
-
         <div class="item-block">
             <!-- toast 必须使用v-if toast mounted函数里面有个倒计时3s就执行的函数-->
             <v-toast  v-if="toastJson.showToast" :toast-json="toastJson" @close-toast="toastJson.showToast = false"></v-toast>
         </div>
-
 
         <!-- calendar -->
         <div class="item-blcok" style="margin-top:50px">
@@ -39,7 +27,7 @@
 
         <!-- router -->
         <div class="router" style="margin-top:30px">
-          <router-link to="/">返回主页</router-link>
+            <router-link to="/">返回主页</router-link>
         </div>
     </div>
 </template>
@@ -101,6 +89,7 @@ export default {
             border:1px solid #ccc;
         }
         .button-test {
+            cursor: pointer;
             box-sizing:border-box;
             display:block;
             border:none;

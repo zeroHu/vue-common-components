@@ -1,7 +1,8 @@
 <template>
     <div class="calendar">
         <div class="choose-calendar-button" @click.stop="showOrHideCalendar(true)">选择日期</div>
-        <div class="box" v-show="defaultData.showcalendar">
+        <!--  v-show="defaultData.showcalendar" -->
+        <div class="box">
             <div class="year-box">
                 <div class="left" @click.stop="monthChoose('slice')"><</div>
                 <div class="main">{{ month+1 }}月 {{ year }}年</div>
@@ -120,13 +121,30 @@
             // 选择日期
             choosedCalendarDate(dindex,dstatus){
                 this.dayChoosedIndex = dindex;
+                var month,
+                    year = this.year,
+                    day = this.monthNumber[dindex].num < 10 ? '0'+this.monthNumber[dindex].num : this.monthNumber[dindex].num;
                 // 计算moth day
-                var month = dstatus == 'before' ? Number(this.month) : dstatus == 'after' ? Number(this.month+2) : Number(this.month+1),
-                    day = this.monthNumber[dindex].num < 10 ? '0'+this.monthNumber[dindex].num : this.monthNumber[dindex].num
-                    month = month< 10 ? '0'+month : month
+                if (dstatus === 'before') {
+                    month = Number(this.month)
+                } else if(dstatus == 'after') {
+                    month = Number(this.month+2)
+                } else {
+                    month = Number(this.month+1)
+                }
+                if (month === 0){
+                    month = 12
+                    year --
+                }
+                if (month === 13) {
+                    month = 1
+                    year ++
+                }
+                // 处理 month 格式
+                month = month < 10 ? '0' + month : month;
 
                 // 传日历选中的值给父模板
-                this.$emit('haschoosed-date',this.year + '-' + month  + '-' + day)
+                this.$emit('haschoosed-date', year + '-' + month  + '-' + day)
                 // 关闭日历
                 this.showOrHideCalendar(false)
             },
@@ -204,12 +222,12 @@
                     }
                 }
                 .day {
-                    height: 84%;
+                    height: 100%;
                     display: flex;
                     flex-wrap: wrap;
-                    align-items: center;
                     div {
                         width: 14%;
+                        line-height: 36px;
                         &.grey {
                             color:#bbb;
                         }

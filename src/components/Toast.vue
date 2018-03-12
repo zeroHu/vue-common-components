@@ -7,6 +7,7 @@
     export default {
         props:['toastJson'],
         mounted(){
+            console.log('=======> 123')
             setInterval(() => {
                 this.toastJson.showToast = false;
             }, this.toastJson.showtime)

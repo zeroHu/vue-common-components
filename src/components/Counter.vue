@@ -2,7 +2,7 @@
     <div class="counter">
         <div class="box">
             <span @click="counter('slice')">-</span>
-            <input type="number" v-model="counterInitnum" @input="counter">
+            <input type="number" v-model="numInitnum" @input="counter">
             <span @click="counter('add')">+</span>
         </div>
     </div>
@@ -10,14 +10,19 @@
 <script>
     export default {
         props:['counterInitnum'],
+        data () {
+            return {
+                'numInitnum': this.counterInitnum
+            }
+        },
         methods:{
             counter(type){
                 if(type == 'add'){
-                    this.counterInitnum ++
+                    this.numInitnum ++
                 }else if(type == 'slice') {
-                    this.counterInitnum > 1 ? this.counterInitnum -- : ''
+                    this.numInitnum > 1 ? this.numInitnum -- : ''
                 }
-                this.$emit('counter-num',this.counterInitnum)
+                this.$emit('counter-num',this.numInitnum)
             }
         }
     }

@@ -14,11 +14,6 @@
 <script>
     export default{
         props:['dialogJson'],
-        data(){
-            return{
-
-            }
-        },
         methods:{
             closeModel(val){
                 if(val == 'mask'  && !this.dialogJson.isNeedModelClick){
@@ -49,12 +44,15 @@
             left:50%;
             transform: translateX(-50%) translateY(-50%);
             .close {
+                font-size: 26px;
+                color: #fff;
                 position: absolute;
                 cursor: pointer;
-                top:-20px;
+                top:-30px;
                 right:0;
             }
             .button {
+                cursor: pointer;
                 display: flex;
                 div {
                     flex: 1;
