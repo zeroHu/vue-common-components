@@ -41,13 +41,13 @@ calendarJson :{
 
 > 组件效果图
 
-![图片](http://oqt0cgoq9.bkt.clouddn.com/vue-components-muchooer.jpg)
-![图片](http://oqt0cgoq9.bkt.clouddn.com/vue-components-dialog.jpg)
-![图片](http://oqt0cgoq9.bkt.clouddn.com/vue-components-toast.jpg)
-![图片](http://oqt0cgoq9.bkt.clouddn.com/vue-components-chooser.jpg)
-![图片](http://oqt0cgoq9.bkt.clouddn.com/vue-components-selections.jpg)
-![图片](http://oqt0cgoq9.bkt.clouddn.com/vue-components-counter.jpg)
-![图片](http://oqt0cgoq9.bkt.clouddn.com/vue-components-calendar.jpg)
+![图片](http://static.zeroyh.cn/vue-components-muchooer.jpg)
+![图片](http://static.zeroyh.cn/vue-components-dialog.jpg)
+![图片](http://static.zeroyh.cn/vue-components-toast.jpg)
+![图片](http://static.zeroyh.cn/vue-components-chooser.jpg)
+![图片](http://static.zeroyh.cn/vue-components-selections.jpg)
+![图片](http://static.zeroyh.cn/vue-components-counter.jpg)
+![图片](http://static.zeroyh.cn/vue-components-calendar.jpg)
 
 > 项目执行步骤
 
